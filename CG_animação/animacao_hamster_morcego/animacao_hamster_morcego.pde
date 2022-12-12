@@ -6,7 +6,7 @@ void setup() {
     size(450, 720, OPENGL);
 }
 float i = 0;
-float k = 0.01;
+float k = 0.05;
 
 float j = 0;
 float z = 0.01;
@@ -70,12 +70,12 @@ void draw(){
     pushStyle();
     fill(33,30,34);
     pushMatrix(); 
-    rotateZ(i);
+    rotateZ(i+0.5);
     asa_direita();
     popMatrix();
     
     pushMatrix();  
-    rotateZ(-i);
+    rotateZ(-i-0.5);
     asa_esquerda();
     popStyle();
     popMatrix();
@@ -134,7 +134,7 @@ void draw(){
 
 popMatrix();
     if (i>1) k = k*-1 ;
-    if (i<-0.5) k = k*-1 ;
+    if (i<-0.8) k = k*-1 ;
     
     if (j>0.1) z = z*-1 ;
     if (j<-0.1) z = z*-1 ;
