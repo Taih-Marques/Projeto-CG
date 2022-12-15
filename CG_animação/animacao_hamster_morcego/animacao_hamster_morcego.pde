@@ -1,4 +1,4 @@
-import processing.dxf.*;
+ import processing.dxf.*;
 
 import gifAnimation.*;
 import processing.opengl.*;
@@ -11,10 +11,10 @@ void setup() {
     size(1024, 640, OPENGL);
     //size(1600, 800, OPENGL);
     
-  //   myAnimation = new Gif(this, "floresta.gif");
-    // myAnimation.play();
+   myAnimation = new Gif(this, "floresta.gif");
+   myAnimation.play();
     
- //    file = new SoundFile(this, "sample.mp3");
+    // file = new SoundFile(this, "sample.mp3");
    //  file.play();
 }
 float i = 0;
@@ -26,14 +26,17 @@ float z = 0.02;
 float m = 0;
 float n = 0.1;
 
+
+
 void draw(){
-    background(225,225, 225);
+    background(0);
+    //translate(width, height);
     lights();
-  //PImage b; 
- // b = loadImage("floresta.gif"); 
-  // image(myAnimation, 0,0);
- // background(b); 
-  
+    image(myAnimation, 0,0);
+    translate(0, 0,300);
+    //background(b); 
+    // translate(0, 0,50);
+
 
 
   lights();
@@ -45,13 +48,13 @@ void draw(){
   //MORCEGO
 
   pushMatrix();
-    translate( 235, 70, 0 );
-    scale(30,30,30);
+    translate( 235, 70, -200 );
+    scale(20,20,20);
 
-    /*rotateX(PI/4);
-   // rotateZ(PI/2 + radians(150));
-   rotateY(-PI/4);
-    translate(i,i);*/
+    //translate(i,i);
+      rotateX(PI/4);
+      rotateZ(PI/2 + radians(150));
+      rotateX(-0.5);
     
     pushStyle();
      fill(100,100,100);
@@ -108,11 +111,9 @@ void draw(){
   //HAMSTER
 
   pushMatrix();
-    translate( 235, 540, 0 );
-   
-  
+    translate( 235, 450, -200 );
+    scale(20,20,20);
     
-    scale(30,30,30);
     rotateZ(PI);
     rotateX(-0.2);
     
@@ -170,7 +171,7 @@ popMatrix();
     if (j>0.1) z = z*-1 ;
     if (j<-0.1) z = z*-1 ;
     
-    m += 1;
+    m += 2;
   //  if (m<-1) n = n*-1 ;
     //if (m>5) n =n*-1 ;
 }
