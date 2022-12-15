@@ -1,11 +1,17 @@
+import gifAnimation.*;
 import processing.opengl.*;
 import processing.sound.*;
 SoundFile file;
+Gif myAnimation;
 
 void setup() {
     // Aspect Ratio 16x9
-    size(800, 800, OPENGL);
+    size(1024, 640, OPENGL);
     //size(1600, 800, OPENGL);
+    
+     myAnimation = new Gif(this, "floresta.gif");
+     myAnimation.play();
+    
      file = new SoundFile(this, "sample.mp3");
      file.play();
 }
@@ -20,9 +26,10 @@ float n = 0.1;
 
 void draw(){
     //background(225,225, 225);
-  PImage b; 
-  b = loadImage("fundo2.jpg"); 
-  background(b); 
+  //PImage b; 
+ // b = loadImage("floresta.gif"); 
+   image(myAnimation, 0,0);
+ // background(b); 
   
 
 
