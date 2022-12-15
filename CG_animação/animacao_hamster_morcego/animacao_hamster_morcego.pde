@@ -14,8 +14,8 @@ void setup() {
   //   myAnimation = new Gif(this, "floresta.gif");
     // myAnimation.play();
     
-     file = new SoundFile(this, "sample.mp3");
-     file.play();
+ //    file = new SoundFile(this, "sample.mp3");
+   //  file.play();
 }
 float i = 0;
 float k = 0.1;
@@ -48,10 +48,10 @@ void draw(){
     translate( 235, 70, 0 );
     scale(30,30,30);
 
-    rotateX(PI/4);
-    rotateZ(-PI/2);
- 
-    translate(i,i);
+    /*rotateX(PI/4);
+   // rotateZ(PI/2 + radians(150));
+   rotateY(-PI/4);
+    translate(i,i);*/
     
     pushStyle();
      fill(100,100,100);
@@ -109,11 +109,16 @@ void draw(){
 
   pushMatrix();
     translate( 235, 540, 0 );
+   
+  
+    
     scale(30,30,30);
     rotateZ(PI);
     rotateX(-0.2);
     
-    rotateY(sin(m));
+    rotateY(-PI/4);
+    rotateY( radians(10*sin(m/16)) );
+    
     
     //translate(m,-m); 
     pushStyle();
@@ -165,7 +170,7 @@ popMatrix();
     if (j>0.1) z = z*-1 ;
     if (j<-0.1) z = z*-1 ;
     
-    
-    if (m<-1) n = n*-1 ;
-    if (m>5) n =n*-1 ;
+    m += 1;
+  //  if (m<-1) n = n*-1 ;
+    //if (m>5) n =n*-1 ;
 }
