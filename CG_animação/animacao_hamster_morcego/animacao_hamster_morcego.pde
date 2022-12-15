@@ -1,35 +1,47 @@
 import processing.opengl.*;
+import processing.sound.*;
+SoundFile file;
 
 void setup() {
     // Aspect Ratio 16x9
-    //size(360, 480, OPENGL);
-    size(450, 720, OPENGL);
+    size(800, 800, OPENGL);
+    //size(1600, 800, OPENGL);
+     file = new SoundFile(this, "sample.mp3");
+     file.play();
 }
 float i = 0;
-float k = 0.05;
+float k = 0.1;
 
 float j = 0;
-float z = 0.01;
+float z = 0.02;
 
+float m = 0;
+float n = 0.1;
 
 void draw(){
+    //background(225,225, 225);
+  PImage b; 
+  b = loadImage("fundo2.jpg"); 
+  background(b); 
+  
 
-  background(255, 255, 255);
+
   lights();
   noStroke();
    i = i + k;
    j = j + z;
+   m = m + n;
 
   //MORCEGO
 
   pushMatrix();
-
     translate( 235, 70, 0 );
     scale(30,30,30);
 
     rotateX(PI/4);
     rotateZ(-PI/2);
-      
+ 
+    translate(i,i); 
     pushStyle();
      fill(100,100,100);
      geraCorpoMorcego();
@@ -79,7 +91,7 @@ void draw(){
     asa_esquerda();
     popStyle();
     popMatrix();
-
+   
   popMatrix();
 
   //HAMSTER
@@ -90,6 +102,8 @@ void draw(){
     rotateZ(PI);
     rotateX(-0.2);
     
+    
+    translate(m,-m); 
     pushStyle();
       fill(150,75,0);
       geraCorpo();
@@ -138,4 +152,8 @@ popMatrix();
     
     if (j>0.1) z = z*-1 ;
     if (j<-0.1) z = z*-1 ;
+    
+    
+    if (m<-1) n = n*-1 ;
+    if (m>5) n =n*-1 ;
 }
