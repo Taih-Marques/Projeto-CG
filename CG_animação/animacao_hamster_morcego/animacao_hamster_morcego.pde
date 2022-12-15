@@ -48,13 +48,13 @@ void draw(){
   //MORCEGO
 
   pushMatrix();
-    translate( 235, 70, -200 );
+    translate( 235, 120, -200 );
     scale(20,20,20);
 
-    //translate(i,i);
+      translate(i,i);
       rotateX(PI/4);
       rotateZ(PI/2 + radians(150));
-      rotateX(-0.5);
+      rotateX(-0.3);
     
     pushStyle();
      fill(100,100,100);
