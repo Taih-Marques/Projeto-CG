@@ -1,3 +1,5 @@
+import processing.dxf.*;
+
 import gifAnimation.*;
 import processing.opengl.*;
 import processing.sound.*;
@@ -9,8 +11,8 @@ void setup() {
     size(1024, 640, OPENGL);
     //size(1600, 800, OPENGL);
     
-     myAnimation = new Gif(this, "floresta.gif");
-     myAnimation.play();
+  //   myAnimation = new Gif(this, "floresta.gif");
+    // myAnimation.play();
     
      file = new SoundFile(this, "sample.mp3");
      file.play();
@@ -25,10 +27,11 @@ float m = 0;
 float n = 0.1;
 
 void draw(){
-    //background(225,225, 225);
+    background(225,225, 225);
+    lights();
   //PImage b; 
  // b = loadImage("floresta.gif"); 
-   image(myAnimation, 0,0);
+  // image(myAnimation, 0,0);
  // background(b); 
   
 
@@ -48,7 +51,8 @@ void draw(){
     rotateX(PI/4);
     rotateZ(-PI/2);
  
-    translate(i,i); 
+    translate(i,i);
+    
     pushStyle();
      fill(100,100,100);
      geraCorpoMorcego();
@@ -109,8 +113,9 @@ void draw(){
     rotateZ(PI);
     rotateX(-0.2);
     
+    rotateY(sin(m));
     
-    translate(m,-m); 
+    //translate(m,-m); 
     pushStyle();
       fill(150,75,0);
       geraCorpo();
