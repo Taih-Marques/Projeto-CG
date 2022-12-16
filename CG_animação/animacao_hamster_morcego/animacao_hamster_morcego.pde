@@ -11,7 +11,7 @@ void setup() {
     size(1024, 640, OPENGL);
     //size(1600, 800, OPENGL);
     
-   myAnimation = new Gif(this, "floresta.gif");
+   myAnimation = new Gif(this, "fundo.gif");
    myAnimation.play();
     
     // file = new SoundFile(this, "sample.mp3");
@@ -47,14 +47,14 @@ void draw(){
 
   //MORCEGO
 
-  pushMatrix();
+pushMatrix();
     translate( 235, 120, -200 );
     scale(20,20,20);
 
       translate(i,i);
       rotateX(PI/4);
       rotateZ(PI/2 + radians(150));
-      rotateX(-0.3);
+      rotateX(-0.5);
     
     pushStyle();
      fill(100,100,100);
@@ -76,8 +76,8 @@ void draw(){
     pushStyle();
       fill(35,40,43);
       pushMatrix();
-     rotateZ(-0.3);
-      orelha_direita();
+       rotateZ(-0.3);
+       orelha_direita();
       popMatrix();
       
       pushMatrix();
@@ -106,11 +106,11 @@ void draw(){
     popStyle();
     popMatrix();
    
-  popMatrix();
+popMatrix();
 
   //HAMSTER
 
-  pushMatrix();
+ pushMatrix();
     translate( 235, 450, -200 );
     scale(20,20,20);
     
@@ -163,8 +163,26 @@ void draw(){
       olhoDireito();    
       bigodes();
     popStyle();
+    
+    pushMatrix();
+    pushStyle();
+      fill(225,0,0);
+     translate(0.1,3,0);
+    rotateX(0.1);
+      marcaEsquerdo();
+      popMatrix();
+      
+      pushMatrix();
+      translate(0 ,2.7,-0.3);
+      rotateX(0);
+      marcaDireito();   
+      popMatrix();
+      
+    popStyle();
+    
 
 popMatrix();
+
     if (i>1) k = k*-1 ;
     if (i<-0.8) k = k*-1 ;
     
