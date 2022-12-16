@@ -14,14 +14,14 @@ void setup() {
    myAnimation = new Gif(this, "fundo.gif");
    myAnimation.play();
     
-    // file = new SoundFile(this, "sample.mp3");
-   //  file.play();
+    file = new SoundFile(this, "Skyrim - Boss Battle #1.mp3");
+    file.play();
 }
 float i = 0;
 float k = 0.1;
 
 float j = 0;
-float z = 0.02;
+float z = 0.01;
 
 float m = 0;
 float n = 0.1;
